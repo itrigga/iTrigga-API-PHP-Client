@@ -3,7 +3,7 @@ iTrigga API client - By Nathan Whitworth
 
 This client makes use of PHP's simple XML library. It is currently very simple and should not be considered as a stable release.
 
-So as to not restrict this to PHP 5.3 or above, I've used itrigga_ before every class as a pear style namespace.
+Namespaces not used for PHP 5.2 compatibility. Instead subclasses use the prefix iTrigga_ as a pear-style namespace.
 
 Example usage
 --------------
@@ -12,16 +12,16 @@ Contact iTrigga for API key details, if you don't have them.
 
 ```
 require_once 'lib/iTrigga.php';
-$iTrigga = new itrigga_iTrigga($siteKey, $apiKey);
+$iTrigga = new iTrigga($siteKey, $apiKey);
 $items = $iTrigga->getItems();
 ```
 
-You will get back an array of `itrigga_Item`s, and each property is accessible via
+You will get back an array of `iTrigga_Item`s, and each property is accessible via
 a get method, for example: `$item->getName()`
 
-Complex types, such as `$item->getSource()` will return an `itrigga_Source` object.
+Complex types, such as `$item->getSource()` will return an `iTrigga_Source` object.
 
-Due to the way the iTrigga API works (for efficiency), `getItems()` returns a simplified version of the `itrigga_Item` object.
+Due to the way the iTrigga API works (for efficiency), `getItems()` returns a simplified version of the `iTrigga_Item` object.
 To fetch the full set of information for a given item, use
 
 ```
@@ -40,7 +40,7 @@ The client supports pagination via a pagination object:
 ```
 $perPage = 10;
 $currentPage = 1;
-$paginator = new itrigga_Paginator($perPage, $currentPage);
+$paginator = new iTrigga_Paginator($perPage, $currentPage);
 
 $items = $iTrigga->getItems($paginator);
 ```

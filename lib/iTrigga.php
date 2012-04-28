@@ -2,8 +2,8 @@
 
 define('IT_BASE_URL','http://api.itrigga.com/api/v1');
 
-require_once 'iTrigga/Paginator.php';
-require_once 'iTrigga/Item.php';
+// Autoload sub-classes
+spl_autoload_register(array('iTrigga', 'autoload'));
 
 /**
  * iTrigga API client
@@ -11,7 +11,7 @@ require_once 'iTrigga/Item.php';
  * @author Nathan Whitworth <nathan@nathanwhitworth.co.uk>
  * @version 0.1
  */
-class itrigga_iTrigga
+class iTrigga
 {
 	private $siteKey = null;
 	private $apiKey = null;
@@ -28,6 +28,17 @@ class itrigga_iTrigga
 		$this->apiKey = $apiKey;
 	}
 
+  /**
+   * Autoload sub-classes
+   *
+   * @param string $class Name of the class to load
+   */
+  public static function autoload($class) {
+    if (strpos($class, 'iTrigga') === 0) {
+      require str_replace('_', '/', $class) . '.php';
+    }
+  }
+
 	private function createLoginArgs()
 	{
 		return '?site_key=' . $this->siteKey . '&api_key=' . $this->apiKey;
@@ -38,7 +49,7 @@ class itrigga_iTrigga
 	 *
 	 * @param API path $path
 	 */
-	private function fetchData($path, itrigga_Paginator $paginator = null)
+	private function fetchData($path, iTrigga_Paginator $paginator = null)
 	{
 		$apiUrl = IT_BASE_URL . $path . '.xml' . $this->createLoginArgs();
 
@@ -62,10 +73,10 @@ class itrigga_iTrigga
 	/**
 	 * Gets an array of items
 	 *
-	 * @param itrigga_Paginator $paginator
-	 * @return itrigga_Item[]
+	 * @param iTrigga_Paginator $paginator
+	 * @return iTrigga_Item[]
 	 */
-	public function getItems(itrigga_Paginator $paginator = null)
+	public function getItems(iTrigga_Paginator $paginator = null)
 	{
 		$itemData = $this->fetchData('/items', $paginator);
 
@@ -78,7 +89,7 @@ class itrigga_iTrigga
 
 		foreach ($itemData->item as $rawItem)
 		{
-			$items[] = new itrigga_Item($rawItem);
+			$items[] = new iTrigga_Item($rawItem);
 		}
 
 		return $items;
@@ -89,13 +100,13 @@ class itrigga_iTrigga
 	 * gets an extended item with more data available
 	 *
 	 * @param int $itemId
-	 * @return itrigga_Item
+	 * @return iTrigga_Item
 	 */
 	public function getItem($itemId)
 	{
 		$result = $this->fetchData('/items/' . $itemId);
 
-		$item = new itrigga_Item($result);
+		$item = new iTrigga_Item($result);
 
 		return $item;
 	}

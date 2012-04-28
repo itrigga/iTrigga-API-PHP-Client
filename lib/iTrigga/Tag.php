@@ -1,6 +1,6 @@
 <?php
 
-class itrigga_Tag
+class iTrigga_Tag
 {
 	private $id;
 	private $itemId;

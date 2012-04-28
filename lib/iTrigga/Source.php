@@ -1,6 +1,6 @@
 <?php
 
-class itrigga_Source
+class iTrigga_Source
 {
 	private $id;
 	private $name;

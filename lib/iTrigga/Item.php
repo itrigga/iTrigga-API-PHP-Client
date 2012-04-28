@@ -1,6 +1,6 @@
 <?php
 
-class itrigga_Item
+class iTrigga_Item
 {
 	private $id;
 	private $name;
@@ -30,14 +30,14 @@ class itrigga_Item
 		$this->type = (string)$rawData->type[0];
 		$this->summary = (string)$rawData->summary[0];
 		$this->editorial = ((string)$rawData->editorial[0]) == 'false' ? false : true;
-		$this->source = new itrigga_Source($rawData->source);
+		$this->source = new iTrigga_Source($rawData->source);
 
 		// channels
 		if (isset($rawData->channels))
 		{
 			foreach ($rawData->channels->channel as $rawChannel)
 			{
-				$this->channels[] = new itrigga_Channel($rawChannel);
+				$this->channels[] = new iTrigga_Channel($rawChannel);
 			}
 		}
 
@@ -46,7 +46,7 @@ class itrigga_Item
 		{
 			foreach ($rawData->entities->entity as $rawEntity)
 			{
-				$this->entities[] = new itrigga_Entity($rawEntity);
+				$this->entities[] = new iTrigga_Entity($rawEntity);
 			}
 		}
 
@@ -55,7 +55,7 @@ class itrigga_Item
 		{
 			foreach ($rawData->item_tags->item_tag as $rawTag)
 			{
-				$this->tags[] = new itrigga_Tag($rawTag);
+				$this->tags[] = new iTrigga_Tag($rawTag);
 			}
 		}
 	}
@@ -111,7 +111,7 @@ class itrigga_Item
 	}
 
 	/**
-	 * @return itrigga_Source
+	 * @return iTrigga_Source
 	 */
 	public function getSource()
 	{
@@ -120,7 +120,7 @@ class itrigga_Item
 
 	/**
 	 *
-	 * @return itrigga_Channel[]
+	 * @return iTrigga_Channel[]
 	 */
 	public function getChannels()
 	{
@@ -129,7 +129,7 @@ class itrigga_Item
 
 	/**
 	 *
-	 * @return itrigga_Entity[]
+	 * @return iTrigga_Entity[]
 	 */
 	public function getEntities()
 	{
@@ -138,7 +138,7 @@ class itrigga_Item
 
 	/**
 	 *
-	 * @return itrigga_Tag[]
+	 * @return iTrigga_Tag[]
 	 */
 	public function getTags()
 	{

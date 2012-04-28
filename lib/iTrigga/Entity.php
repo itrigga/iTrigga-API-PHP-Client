@@ -1,6 +1,6 @@
 <?php
 
-class itrigga_Entity
+class iTrigga_Entity
 {
 	private $id;
 	private $name;

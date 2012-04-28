@@ -1,6 +1,6 @@
 <?php
 
-class itrigga_Channel
+class iTrigga_Channel
 {
 	private $id;
 	private $name;
