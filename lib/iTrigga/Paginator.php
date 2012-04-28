@@ -1,18 +1,17 @@
 <?php
 
-
-class itrigga_Paginator
+class iTrigga_Paginator
 {
 	private $perPage;
 	private $page;
-	private $results=0;
-	
-	public function __construct($perPage=20,$page=1)
+	private $results = 0;
+
+	public function __construct($perPage = 20, $page = 1)
 	{
 		$this->perPage = $perPage;
 		$this->page = $page;
 	}
-	
+
 	/**
 	 * Get how many results we want per page
 	 */
@@ -20,7 +19,7 @@ class itrigga_Paginator
 	{
 		return $this->perPage;
 	}
-	
+
 	/**
 	 * return the current page
 	 */
@@ -28,17 +27,15 @@ class itrigga_Paginator
 	{
 		return $this->page;
 	}
-	
+
 	public function getPageCount()
 	{
 		return ceil($this->results/$this->perPage);
 	}
-	
+
 	public function setResults($resultCount)
 	{
 		$this->results = $resultCount;
 	}
-	
-}
 
-?>
+}

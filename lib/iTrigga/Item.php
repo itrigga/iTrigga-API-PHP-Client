@@ -1,10 +1,6 @@
 <?php
-require_once 'iTrigga/Source.php';
-require_once 'iTrigga/Entity.php';
-require_once 'iTrigga/Channel.php';
-require_once 'iTrigga/Tag.php';
 
-class itrigga_Item
+class iTrigga_Item
 {
 	private $id;
 	private $name;
@@ -22,10 +18,8 @@ class itrigga_Item
 	private $entities = array();
 	private $tags = array();
 
-
 	public function __construct($rawData)
 	{
-
 		$this->id = (int)$rawData->id[0];
 		$this->name = (string)$rawData->name[0];
 		$this->permalink = (string)$rawData->permalink[0];
@@ -36,14 +30,14 @@ class itrigga_Item
 		$this->type = (string)$rawData->type[0];
 		$this->summary = (string)$rawData->summary[0];
 		$this->editorial = ((string)$rawData->editorial[0]) == 'false' ? false : true;
-		$this->source = new itrigga_Source($rawData->source);
+		$this->source = new iTrigga_Source($rawData->source);
 
 		// channels
 		if (isset($rawData->channels))
 		{
 			foreach ($rawData->channels->channel as $rawChannel)
 			{
-				$this->channels[] = new itrigga_Channel($rawChannel);
+				$this->channels[] = new iTrigga_Channel($rawChannel);
 			}
 		}
 
@@ -52,7 +46,7 @@ class itrigga_Item
 		{
 			foreach ($rawData->entities->entity as $rawEntity)
 			{
-				$this->entities[] = new itrigga_Entity($rawEntity);
+				$this->entities[] = new iTrigga_Entity($rawEntity);
 			}
 		}
 
@@ -61,10 +55,9 @@ class itrigga_Item
 		{
 			foreach ($rawData->item_tags->item_tag as $rawTag)
 			{
-				$this->tags[] = new itrigga_Tag($rawTag);
+				$this->tags[] = new iTrigga_Tag($rawTag);
 			}
 		}
-
 	}
 
 	public function getId()
@@ -118,40 +111,38 @@ class itrigga_Item
 	}
 
 	/**
-	 * @return itrigga_Source
+	 * @return iTrigga_Source
 	 */
 	public function getSource()
 	{
 		return $this->source;
 	}
-	
+
 	/**
-	 * 
-	 * @return itrigga_Channel[]
+	 *
+	 * @return iTrigga_Channel[]
 	 */
 	public function getChannels()
 	{
 		return $this->channels;
 	}
-	
+
 	/**
-	 * 
-	 * @return itrigga_Entity[]
+	 *
+	 * @return iTrigga_Entity[]
 	 */
 	public function getEntities()
 	{
 		return $this->entities;
 	}
-	
+
 	/**
-	 * 
-	 * @return itrigga_Tag[]
+	 *
+	 * @return iTrigga_Tag[]
 	 */
 	public function getTags()
 	{
 		return $this->tags;
 	}
-	
-}
 
-?>
+}
