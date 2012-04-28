@@ -11,7 +11,7 @@ class itrigga_Source
 	private $nextCheckDue;
 	private $checkInterval;
 	private $description;
-	
+
 	public function __construct($rawData)
 	{
 		$this->id = (int)$rawData->id[0];
@@ -24,47 +24,47 @@ class itrigga_Source
 		$this->checkInterval = (int)$rawData->check_interval_minutes[0];
 		$this->description = (string)$rawData->description[0];
 	}
-	
+
 	public function getId()
 	{
 		return $this->id;
 	}
-	
+
 	public function getName()
 	{
 		return $this->name;
 	}
-	
+
 	public function getSiteUrl()
 	{
 		return $this->siteUrl;
 	}
-	
+
 	public function getUrl()
 	{
 		return $this->url;
 	}
-	
+
 	public function getPermalink()
 	{
 		return $this->permalink;
 	}
-	
+
 	public function getLastChecked()
 	{
 		return $this->lastChecked;
 	}
-	
+
 	public function getNextCheckDue()
 	{
 		return $this->nextCheckDue;
 	}
-	
+
 	public function checkInterval()
 	{
 		return $this->checkInterval();
 	}
-	
+
 	public function getDescription()
 	{
 		return $this->description;

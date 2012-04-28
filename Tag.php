@@ -9,7 +9,7 @@ class itrigga_Tag
 	private $url;
 	private $pos;
 	private $count;
-	
+
 	public function __construct($rawData)
 	{
 		$this->id = (int)$rawData->id[0];
@@ -19,12 +19,12 @@ class itrigga_Tag
 		$this->pos = (string)$rawData->pos[0];
 		$this->count = (int)$rawData->count[0];
 	}
-	
+
 	public function getId()
 	{
 		return $this->id;
 	}
-	
+
 	public function getItemId()
 	{
 		return $this->itemId;
@@ -33,17 +33,17 @@ class itrigga_Tag
 	{
 		return $this->term;
 	}
-	
+
 	public function getUrl()
 	{
 		return $this->url;
 	}
-	
+
 	public function getPos()
 	{
 		return $this->pos;
 	}
-	
+
 	public function getCount()
 	{
 		return $this->count;

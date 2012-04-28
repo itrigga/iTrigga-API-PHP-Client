@@ -124,27 +124,27 @@ class itrigga_Item
 	{
 		return $this->source;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @return itrigga_Channel[]
 	 */
 	public function getChannels()
 	{
 		return $this->channels;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @return itrigga_Entity[]
 	 */
 	public function getEntities()
 	{
 		return $this->entities;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @return itrigga_Tag[]
 	 */
 	public function getTags()

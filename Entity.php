@@ -6,7 +6,7 @@ class itrigga_Entity
 	private $name;
 	private $permalink;
 	private $entityType;
-	
+
 	public function __construct($rawData)
 	{
 		$this->id = (int)$rawData->id[0];
@@ -14,7 +14,7 @@ class itrigga_Entity
 		$this->permalink = (string)$rawData->permalink[0];
 		$this->entityType = (string)$rawData->entityType[0];
 	}
-	
+
 	public function getId()
 	{
 		return $this->id;
@@ -24,12 +24,12 @@ class itrigga_Entity
 	{
 		return $this->name;
 	}
-	
+
 	public function getPermalink()
 	{
 		return $this->permalink;
 	}
-	
+
 	public function getEntityType()
 	{
 		return $this->entityType;
