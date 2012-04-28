@@ -1,9 +1,9 @@
 <?php
 
-require_once 'iTrigga/Source.php';
-require_once 'iTrigga/Entity.php';
-require_once 'iTrigga/Channel.php';
-require_once 'iTrigga/Tag.php';
+require_once 'Source.php';
+require_once 'Entity.php';
+require_once 'Channel.php';
+require_once 'Tag.php';
 
 class itrigga_Item
 {
