@@ -99,9 +99,7 @@ class itrigga_iTrigga
 		
 		return $item;
 	}
-	
-	
-	
-}
 
-?>
+
+
+}

@@ -151,7 +151,5 @@ class itrigga_Item
 	{
 		return $this->tags;
 	}
-	
-}
 
-?>
+}

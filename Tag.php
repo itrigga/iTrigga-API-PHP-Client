@@ -48,7 +48,5 @@ class itrigga_Tag
 	{
 		return $this->count;
 	}
-	
-}
 
-?>
+}

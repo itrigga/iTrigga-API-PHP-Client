@@ -28,6 +28,3 @@ class itrigga_Channel
 		return $this->permalink;
 	}
 }
-
-
-?>

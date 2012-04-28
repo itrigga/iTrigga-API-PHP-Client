@@ -38,7 +38,5 @@ class itrigga_Paginator
 	{
 		$this->results = $resultCount;
 	}
-	
-}
 
-?>
+}

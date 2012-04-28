@@ -34,7 +34,5 @@ class itrigga_Entity
 	{
 		return $this->entityType;
 	}
-	
-}
 
-?>
+}
