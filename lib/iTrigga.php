@@ -2,8 +2,8 @@
 
 define('IT_BASE_URL','http://api.itrigga.com/api/v1');
 
-require_once 'lib/Paginator.php';
-require_once 'lib/Item.php';
+require_once 'iTrigga/Paginator.php';
+require_once 'iTrigga/Item.php';
 
 /**
  * iTrigga API client

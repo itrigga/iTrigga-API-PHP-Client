@@ -1,10 +1,5 @@
 <?php
 
-require_once 'Source.php';
-require_once 'Entity.php';
-require_once 'Channel.php';
-require_once 'Tag.php';
-
 class itrigga_Item
 {
 	private $id;
