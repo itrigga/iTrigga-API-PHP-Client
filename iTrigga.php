@@ -1,4 +1,5 @@
 <?php
+
 define('IT_BASE_URL','http://api.itrigga.com/api/v1');
 
 require_once 'iTrigga/Paginator.php';
@@ -56,7 +57,6 @@ class itrigga_iTrigga
 		curl_close($ch);
 
 		return simplexml_load_string($data);
-
 	}
 
 	/**
@@ -99,7 +99,5 @@ class itrigga_iTrigga
 
 		return $item;
 	}
-
-
 
 }

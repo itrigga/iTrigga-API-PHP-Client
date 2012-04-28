@@ -1,4 +1,5 @@
 <?php
+
 require_once 'iTrigga/Source.php';
 require_once 'iTrigga/Entity.php';
 require_once 'iTrigga/Channel.php';
@@ -22,10 +23,8 @@ class itrigga_Item
 	private $entities = array();
 	private $tags = array();
 
-
 	public function __construct($rawData)
 	{
-
 		$this->id = (int)$rawData->id[0];
 		$this->name = (string)$rawData->name[0];
 		$this->permalink = (string)$rawData->permalink[0];
@@ -64,7 +63,6 @@ class itrigga_Item
 				$this->tags[] = new itrigga_Tag($rawTag);
 			}
 		}
-
 	}
 
 	public function getId()

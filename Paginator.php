@@ -1,6 +1,5 @@
 <?php
 
-
 class itrigga_Paginator
 {
 	private $perPage;

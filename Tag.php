@@ -1,6 +1,5 @@
 <?php
 
-
 class itrigga_Tag
 {
 	private $id;
