@@ -11,6 +11,7 @@ Example usage
 Contact iTrigga for API key details, if you don't have them.
 
 ```
+require_once 'iTrigga.php';
 $iTrigga = new itrigga_iTrigga($siteKey, $apiKey);
 $items = $iTrigga->getItems();
 ```
