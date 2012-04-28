@@ -30,7 +30,7 @@ class itrigga_iTrigga
 
 	private function createLoginArgs()
 	{
-		return '?site_key='.$this->siteKey.'&api_key='.$this->apiKey;
+		return '?site_key=' . $this->siteKey . '&api_key=' . $this->apiKey;
 	}
 
 	/**
@@ -38,21 +38,21 @@ class itrigga_iTrigga
 	 *
 	 * @param API path $path
 	 */
-	private function fetchData($path,itrigga_Paginator $paginator = null)
+	private function fetchData($path, itrigga_Paginator $paginator = null)
 	{
-		$apiUrl = IT_BASE_URL.$path.'.xml'.$this->createLoginArgs();
+		$apiUrl = IT_BASE_URL . $path . '.xml' . $this->createLoginArgs();
 
 		if ($paginator)
 		{
-			$apiUrl .= '&page='.$paginator->getPage().'&per_page='.$paginator->getPerPage();
+			$apiUrl .= '&page=' . $paginator->getPage() . '&per_page=' . $paginator->getPerPage();
 		}
 
 		// echo $apiUrl;
 
 		$ch = curl_init($apiUrl);
 		$timeout = 5;
-		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT, $timeout);
 		$data = curl_exec($ch);
 		curl_close($ch);
 
@@ -67,7 +67,7 @@ class itrigga_iTrigga
 	 */
 	public function getItems(itrigga_Paginator $paginator = null)
 	{
-		$itemData = $this->fetchData('/items',$paginator);
+		$itemData = $this->fetchData('/items', $paginator);
 
 		if ($paginator)
 		{
@@ -93,7 +93,7 @@ class itrigga_iTrigga
 	 */
 	public function getItem($itemId)
 	{
-		$result = $this->fetchData('/items/'.$itemId);
+		$result = $this->fetchData('/items/' . $itemId);
 
 		$item = new itrigga_Item($result);
 

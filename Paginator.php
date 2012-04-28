@@ -4,9 +4,9 @@ class itrigga_Paginator
 {
 	private $perPage;
 	private $page;
-	private $results=0;
+	private $results = 0;
 
-	public function __construct($perPage=20,$page=1)
+	public function __construct($perPage = 20, $page = 1)
 	{
 		$this->perPage = $perPage;
 		$this->page = $page;
